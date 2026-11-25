@@ -2,12 +2,258 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>EVONG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Provisional: lleva directamente al juego (conservando #en) hasta que esté la página de presentación -->
-<script>location.replace('jugar/' + location.search + location.hash);</script>
-<meta http-equiv="refresh" content="0; url=jugar/">
-<link rel="canonical" href="jugar/">
+<title>EVONG. Evaluación en acción · Juego educativo sobre evaluación</title>
+<meta name="description" content="EVONG. Evaluación en acción: juego de simulación educativo sobre evaluación ambientado en la gestión de una ONG. Juega gratis en el navegador, en español o en inglés.">
+<link rel="icon" href="jugar/icon.png">
+<link rel="alternate" hreflang="es" href="https://evong.evalfor.net/">
+<link rel="alternate" hreflang="en" href="https://evong.evalfor.net/en/">
+<meta property="og:title" content="EVONG. Evaluación en acción">
+<meta property="og:description" content="Juego de simulación educativo sobre evaluación, ambientado en la gestión de una ONG. Gratis, en el navegador.">
+<meta property="og:image" content="https://evong.evalfor.net/img/sala.webp">
+<link rel="preload" href="fonts/dosis-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="web.css">
 </head>
-<body><p><a href="jugar/">Jugar a EVONG</a> · <a href="jugar/#en">Play EVONG (English)</a></p></body>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">EVONG</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú"><span class="bars" aria-hidden="true"></span><span class="lbl">Menú</span></button>
+    <nav id="menu" class="nav" aria-label="Secciones">
+      <a href="#que-es">Qué es</a>
+      <a href="#perfiles">Perfiles</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#como-jugar">Cómo jugar</a>
+      <a href="#creditos">Créditos</a>
+      <a href="#citar">Citar</a>
+    </nav>
+    <a class="lang" href="en/" hreflang="en" lang="en" title="English version">EN</a>
+    <a class="btn btn-play btn-sm" href="jugar/">Jugar</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <img class="logo" src="img/logo-evong.webp" width="571" height="203" alt="EVONG">
+      <p class="sub">Evaluación en acción</p>
+      <h1>Una ONG que poner en marcha, tres perfiles y muchas decisiones</h1>
+      <p class="lead">Un juego de simulación educativo sobre evaluación. Participa en la creación y gestión de la ONG «InterAcción» desde el perfil que elijas y resuelve sus tareas con criterio.</p>
+      <div class="ctas">
+        <a class="btn btn-play" href="jugar/">Jugar ahora</a>
+        <a class="btn btn-ghost" href="#como-jugar">Otras formas de jugar</a>
+      </div>
+      <ul class="facts" aria-label="En resumen">
+        <li>3 perfiles, unos 20 minutos cada uno</li><li>Español e inglés</li><li>Ordenador, tableta o móvil</li><li>Gratis y sin registro</li>
+      </ul>
+    </div>
+    <div>
+      <div class="screen"><img src="img/sala.webp" width="1000" height="750" alt="La oficina de la ONG InterAcción en el juego: una sala con mesas, sillas y un tablón."></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="que-es">
+  <div class="wrap two">
+    <div>
+      <h2>Qué es</h2>
+      <p><em>EVONG. Evaluación en acción</em> es un juego de simulación con fines educativos en el que hay que abordar tareas de evaluación. Es una aventura gráfica en 2D en primera persona: quien juega no aparece en pantalla.</p>
+      <p>La simulación está ambientada en la creación y gestión de una ONG llamada «InterAcción». Se juega desde tres perfiles; cada uno es como un pequeño juego, con actividades distintas dentro de la misma ambientación.</p>
+      <h3>Objetivos educativos</h3>
+      <ul class="goals">
+        <li>Aplicar los conocimientos adquiridos sobre evaluación, estableciendo criterios y realizando valoraciones ajustadas al objeto que se evalúa.</li>
+        <li>Tomar decisiones de forma razonada y consecuente, conociendo las opciones disponibles y las metas que se quieren conseguir, y proponiendo estrategias orientadas a alcanzarlas.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="box">
+        <dl>
+          <dt>Para quién</dt><dd>Estudiantado universitario de cualquier área en los primeros cursos. También otros niveles educativos y contextos no formales e informales.</dd>
+          <dt>Duración</dt><dd>Unos 20 minutos por perfil.</dd>
+          <dt>Idiomas</dt><dd>Español e inglés.</dd>
+        </dl>
+      </div>
+      <div class="box index">
+        <b>Índice de éxito del área</b>
+        <p>Es la variable principal del juego: refleja si las tareas de evaluación de cada perfil se resuelven correctamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="perfiles">
+  <div class="wrap">
+    <h2>Tres perfiles, tres pequeños juegos</h2>
+    <p>Al empezar se elige un perfil. Cada uno tiene tres tareas propias, y en todas hay que establecer criterios, valorar y decidir.</p>
+    <div class="profiles">
+      <article class="profile">
+        <img src="img/economia.webp" width="800" height="600" loading="lazy" alt="Sesión en el Centro de Formación en Calidad.">
+        <div class="body">
+          <img class="icon" src="img/icono-economia.webp" width="220" height="220" alt="">
+          <h3>Coordinación de Economía y Calidad</h3>
+          <p class="role">Asuntos económicos de la ONG, control de gastos y comprobación de que la organización se rige por criterios de calidad.</p>
+          <ol class="tasks">
+            <li><b>Selección de presupuestos</b>Pedir presupuestos de suministros y limpieza a tres empresas y elegir el más adecuado.</li>
+            <li><b>Organización de gastos</b>Distribuir los recursos según el presupuesto y las directrices económicas de la ONG.</li>
+            <li><b>Autoevaluación institucional</b>Con la memoria de la ONG, en una sesión del Centro de Formación en Calidad.</li>
+          </ol>
+        </div>
+      </article>
+      <article class="profile">
+        <img src="img/proyectos.webp" width="800" height="600" loading="lazy" alt="Reunión en la sede de la ONG Aldeas Ecológicas.">
+        <div class="body">
+          <img class="icon" src="img/icono-proyectos.webp" width="220" height="220" alt="">
+          <h3>Coordinación de Proyectos</h3>
+          <p class="role">Diseño y ejecución de los proyectos de cooperación de la ONG.</p>
+          <ol class="tasks">
+            <li><b>Revisión y envío de un proyecto</b>Comprobar que cumple los requisitos de la convocatoria antes de enviarlo.</li>
+            <li><b>Selección para un puesto de trabajo</b>Valorar tres candidaturas según el perfil de la plaza.</li>
+            <li><b>Asesoramiento a «Aldeas Ecológicas»</b>Ayudar a otra ONG con la evaluación de su proyecto.</li>
+          </ol>
+        </div>
+      </article>
+      <article class="profile">
+        <img src="img/relaciones.webp" width="800" height="600" loading="lazy" alt="El stand de InterAcción en la Feria de Asociaciones Locales.">
+        <div class="body">
+          <img class="icon" src="img/icono-relaciones.webp" width="220" height="220" alt="">
+          <h3>Coordinación de Relaciones Institucionales</h3>
+          <p class="role">Relación de la ONG con el exterior: imagen corporativa, formación y captación de personas que colaboren.</p>
+          <ol class="tasks">
+            <li><b>Diseño de la imagen corporativa</b>Elegir con la diseñadora el cartel que mejor encaja con la imagen de la ONG.</li>
+            <li><b>Formación del voluntariado</b>Impartir una charla y comprobar si se ha comprendido.</li>
+            <li><b>Captación de apoyos</b>En la Feria de Asociaciones Locales, proponer a cada persona la forma de colaborar que más le conviene.</li>
+          </ol>
+        </div>
+      </article>
+    </div>
+    <div class="gallery">
+      <figure><img src="img/perfiles-es.webp" width="800" height="600" loading="lazy" alt="Pantalla de elección de perfil, con los tres botones."><figcaption>La elección de perfil</figcaption></figure>
+      <figure><img src="img/despacho.webp" width="800" height="600" loading="lazy" alt="El despacho, con el ordenador y la mesa de trabajo."><figcaption>El despacho</figcaption></figure>
+      <figure><img src="img/formacion-es.webp" width="800" height="600" loading="lazy" alt="La sala de formación con cuatro personas esperando la charla."><figcaption>La sala de formación</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="videos">
+  <div class="wrap">
+    <h2>Vídeos de presentación</h2>
+    <div class="videos">
+      <figure class="video">
+        <button class="yt" data-id="WGbHPyckALE" style="background-image:url(img/titulo-es.webp)" aria-label="Reproducir el vídeo de presentación en español"><span></span></button>
+        <figcaption>Presentación (español)</figcaption>
+      </figure>
+      <figure class="video" lang="en">
+        <button class="yt" data-id="fD98BGpUHhk" style="background-image:url(img/titulo-en.webp)" aria-label="Play the presentation video in English"><span></span></button>
+        <figcaption>Presentation (English)</figcaption>
+      </figure>
+    </div>
+    <p class="small">Los vídeos están en YouTube y solo se cargan desde allí si pulsas en ellos.</p>
+  </div>
+</section>
+
+<section class="band alt" id="como-jugar">
+  <div class="wrap">
+    <h2>Cómo jugar</h2>
+    <div class="how">
+      <div class="box">
+        <span class="badge">Recomendado</span>
+        <h3>En el navegador</h3>
+        <p>Sin instalar nada, en el ordenador, la tableta o el móvil.</p>
+        <ol>
+          <li>Pulsa <strong>Jugar ahora</strong> y después <strong>Jugar</strong>. El botón <strong>EN</strong> del juego cambia al inglés.</li>
+          <li>En el ordenador, el clic izquierdo sirve para mirar y moverse, y el derecho muestra las acciones sobre objetos y personas. En pantallas táctiles, basta con tocar.</li>
+          <li>Esc, o el botón ☰ en tabletas y móviles, abre el menú para guardar y cargar la partida.</li>
+        </ol>
+        <p style="margin:14px 0 0"><a class="btn btn-play btn-sm" href="jugar/">Jugar ahora</a></p>
+      </div>
+      <div class="box">
+        <span class="badge lt">Versión original</span>
+        <h3>Para Java, sin conexión</h3>
+        <p>La versión de 2015, tal como se publicó, se conserva en Zenodo.</p>
+        <ol>
+          <li>Instala Java 8 o posterior; por ejemplo, <a href="https://adoptium.net/">Eclipse Temurin</a>, gratuito.</li>
+          <li>Descarga <a href="https://zenodo.org/records/24529825/files/evong.zip?download=1">evong.zip</a> (español, 46 MB) o <a href="https://zenodo.org/records/24529825/files/evon_eng.zip?download=1" hreflang="en">evon_eng.zip</a> (inglés, 43 MB) y descomprímelo.</li>
+          <li>Abre el archivo <code>.jar</code> con doble clic.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="creditos">
+  <div class="wrap">
+    <h2>Créditos</h2>
+    <div class="credits">
+      <div><b>DIRECCIÓN</b>Gregorio Rodríguez Gómez y María Soledad Ibarra Sáiz<br><span class="small">Grupo de Investigación EVALfor · Universidad de Cádiz</span></div>
+      <div><b>GUIÓN</b>Miguel Ángel Gómez Ruiz<br><span class="small">Grupo de Investigación EVALfor · Universidad de Cádiz</span></div>
+      <div><b>ILUSTRACIÓN Y ANIMACIÓN</b>David Nieto Rojas<br><span class="small">www.deividart.com</span></div>
+      <div><b>PROGRAMACIÓN</b>Juan Antonio Caballero Hernández<br><span class="small">Grupo de Investigación EVALfor · Universidad de Cádiz</span></div>
+    </div>
+    <p class="fund">Juego realizado en el marco del Proyecto DevalS, EDU2012-31804, financiado parcialmente por el Ministerio de Economía y Competitividad.</p>
+    <p style="margin-top:18px"><strong>Reconocimientos.</strong> Música: «Brittle Rille», «Rollin at 5» y «Carefree», de Kevin MacLeod (<a href="https://incompetech.com">incompetech.com</a>). Efectos de sonido: <a href="https://freesound.org">freesound.org</a>. Desarrollado con eAdventure (e-UCM, Universidad Complutense de Madrid).</p>
+  </div>
+</section>
+
+<section class="band alt" id="citar">
+  <div class="wrap two">
+    <div>
+      <h2>Licencia y cita</h2>
+      <p>El juego se distribuye bajo la licencia <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.es">Creative Commons Reconocimiento-CompartirIgual 3.0 Unported</a>. El código de la versión para navegador, adaptación del motor eAdventure, se distribuye bajo GNU LGPL 3.0.</p>
+      <p>La versión original y la versión para navegador están archivadas en Zenodo, con un DOI permanente.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.5281/zenodo.24529824">Registro en Zenodo</a></li>
+        <li><a href="https://github.com/evong-juego/evong-juego">Código en GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="cite">
+        <p id="cita">Gómez Ruiz, M. Á., Rodríguez-Gómez, G., Ibarra-Sáiz, M. S., Caballero-Hernández, J. A. y Nieto Rojas, D. (2015). <em>EVONG. Evaluación en acción</em> [Juego educativo]. Zenodo. https://doi.org/10.5281/zenodo.24529824</p>
+        <button class="copy" type="button" data-copy="cita">Copiar la cita</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>EVONG. Evaluación en acción · evong.evalfor.net</span>
+    <span>Esta web no usa cookies ni seguimiento.</span>
+  </div>
+</footer>
+
+<script>
+{
+  const bar = document.querySelector('.top'), mb = bar.querySelector('.menu-btn');
+  const setOpen = (o) => { bar.classList.toggle('open', o); mb.setAttribute('aria-expanded', String(o)); };
+  mb.addEventListener('click', () => setOpen(!bar.classList.contains('open')));
+  for (const a of bar.querySelectorAll('.nav a')) a.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && bar.classList.contains('open')) { setOpen(false); mb.focus(); } });
+  document.addEventListener('click', (e) => { if (!bar.contains(e.target)) setOpen(false); });
+  for (const b of document.querySelectorAll('.yt')) {
+    b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.title = b.parentNode.querySelector('figcaption').textContent;
+      f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+      f.allowFullscreen = true;
+      const d = document.createElement('div');
+      d.className = 'yt';
+      d.appendChild(f);
+      b.replaceWith(d);
+    }, { once: true });
+  }
+  for (const b of document.querySelectorAll('[data-copy]')) {
+    b.addEventListener('click', async () => {
+      const t = document.getElementById(b.dataset.copy).innerText;
+      try { await navigator.clipboard.writeText(t); b.classList.add('ok'); b.textContent = 'Copiada'; }
+      catch (e) { b.textContent = 'Selecciónala y cópiala'; }
+      setTimeout(() => { b.classList.remove('ok'); b.textContent = 'Copiar la cita'; }, 1800);
+    });
+  }
+}
+</script>
+</body>
 </html>

@@ -6,11 +6,11 @@ imágenes, música) son los mismos que los del `.jar`.
 
 ## Publicar
 
-Es un sitio estático: basta con copiar esta carpeta tal cual a la raíz del dominio
-(por ejemplo `evong.evalfor.net` en GitHub Pages) y abrir `index.html`.
+Es un sitio estático: basta con copiar esta carpeta tal cual a un servidor web y abrir
+`index.html`. En este repositorio está en `jugar/`, debajo de la página de presentación:
 
-- Español: `https://evong.evalfor.net/`
-- Inglés: `https://evong.evalfor.net/#en` (o `/en/`, que redirige ahí)
+- Español: `https://evong.evalfor.net/jugar/`
+- Inglés: `https://evong.evalfor.net/jugar/#en` (o `jugar/en/`, que redirige ahí)
 
 No hace falta configurar nada en el servidor. Los archivos `.bin` son paquetes de
 imágenes; si algún alojamiento no los sirviera, se puede generar la variante con

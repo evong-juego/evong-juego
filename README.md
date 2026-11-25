@@ -40,7 +40,7 @@ Sus objetivos educativos son:
 | `jugar/` | Versión web: el juego original funcionando en el navegador, en español e inglés (detalles técnicos en [`jugar/LEEME.md`](jugar/LEEME.md)) |
 | `java/evong-es.jar` | Versión original para Java en español (distribuida como `evong-09.jar`, 2015) |
 | `java/evong-en.jar` | Versión original para Java en inglés (distribuida como `evon_eng.jar`, 2015) |
-| `index.html` | Página de entrada (provisionalmente, lleva directamente al juego) |
+| `index.html`, `en/`, `web.css`, `img/`, `fonts/` | Página de presentación del juego, en español y en inglés (tipografía Dosis, licencia SIL OFL 1.1 en `fonts/`) |
 
 La versión web reimplementa en JavaScript el motor eAdventure con el que se hizo el
 juego y usa los mismos datos, imágenes y sonidos que la versión Java.
