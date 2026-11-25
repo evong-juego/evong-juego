@@ -1,0 +1,50 @@
+{
+  "title": "EVONG. Evaluación en acción",
+  "upload_type": "software",
+  "description": "<p><em>EVONG. Evaluación en acción</em> (<em>EVONG. Assessment in Action</em>) es un juego de simulación con fines educativos en el que el jugador aborda tareas de evaluación. Es una aventura gráfica en 2D en primera persona, ambientada en la creación y gestión de una ONG llamada «InterAcción», que se juega desde tres perfiles: Coordinador de Economía y Calidad, Coordinador de Proyectos y Coordinador de Relaciones Institucionales. Cada perfil dura unos 20 minutos, y el «Índice de éxito del área» refleja la correcta consecución de las tareas de evaluación.</p><p>Objetivos educativos: aplicar los conocimientos adquiridos sobre evaluación, estableciendo criterios y realizando valoraciones ajustadas al objeto evaluado, y tomar decisiones de forma razonada y consecuente, conociendo las opciones disponibles y las metas, y proponiendo estrategias orientadas a conseguirlas.</p><p>Este registro contiene las versiones originales para Java en español e inglés (2015), tal como se distribuyeron, y una adaptación del juego original para navegador (2026), en los dos idiomas, que usa los mismos datos, imágenes y sonidos. Jugar en el navegador: <a href=\"https://evong-juego.github.io/evong-juego/\">https://evong-juego.github.io/evong-juego/</a> (en inglés: <a href=\"https://evong-juego.github.io/evong-juego/#en\">https://evong-juego.github.io/evong-juego/#en</a>)</p><p><strong>Créditos</strong> (según la pantalla de créditos del juego)</p><ul><li><strong>Dirección</strong>: Gregorio Rodríguez Gómez y María Soledad Ibarra Sáiz (Grupo de Investigación EVALfor, Universidad de Cádiz)</li><li><strong>Guion</strong>: Miguel Ángel Gómez Ruiz (Grupo de Investigación EVALfor, Universidad de Cádiz)</li><li><strong>Ilustración y animación</strong>: David Nieto Rojas (www.deividart.com)</li><li><strong>Programación</strong>: Juan Antonio Caballero Hernández (Grupo de Investigación EVALfor, Universidad de Cádiz)</li></ul><p>Juego realizado en el marco del Proyecto DevalS (EDU2012-31804), financiado parcialmente por el Ministerio de Economía y Competitividad.</p><p><strong>Reconocimientos.</strong> Música: «Brittle Rille», «Rollin at 5» y «Carefree», de Kevin MacLeod (incompetech.com). Efectos de sonido: www.freesound.org. Desarrollado con eAdventure.</p><p><strong>Licencia.</strong> El juego se distribuye bajo la licencia Creative Commons Reconocimiento-CompartirIgual 3.0 Unported, como figura en sus créditos. El código del motor de la versión web (<code>jugar/js/</code>), adaptación del motor eAdventure, se distribuye bajo GNU LGPL 3.0.</p>",
+  "creators": [
+    {
+      "name": "Gómez Ruiz, Miguel Ángel",
+      "affiliation": "Grupo de Investigación EVALfor, Universidad de Cádiz"
+    },
+    {
+      "name": "Rodríguez Gómez, Gregorio",
+      "affiliation": "Grupo de Investigación EVALfor, Universidad de Cádiz"
+    },
+    {
+      "name": "Ibarra Sáiz, María Soledad",
+      "affiliation": "Grupo de Investigación EVALfor, Universidad de Cádiz"
+    },
+    {
+      "name": "Caballero Hernández, Juan Antonio",
+      "affiliation": "Grupo de Investigación EVALfor, Universidad de Cádiz"
+    },
+    {
+      "name": "Nieto Rojas, David"
+    }
+  ],
+  "license": "cc-by-sa-3.0",
+  "access_right": "open",
+  "keywords": [
+    "evaluación",
+    "evaluación del aprendizaje",
+    "juego educativo",
+    "juego serio",
+    "serious game",
+    "simulación",
+    "aventura gráfica",
+    "ONG",
+    "educación superior",
+    "assessment",
+    "eAdventure"
+  ],
+  "language": "spa",
+  "notes": "Juego realizado en el marco del Proyecto DevalS (EDU2012-31804), financiado parcialmente por el Ministerio de Economía y Competitividad.",
+  "related_identifiers": [
+    {
+      "identifier": "https://evong-juego.github.io/evong-juego/",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
+  ]
+}

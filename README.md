@@ -47,26 +47,31 @@ juego y usa los mismos datos, imágenes y sonidos que la versión Java.
 
 Según la pantalla de créditos del propio juego:
 
-- **Guion**: Miguel Ángel Gómez Ruiz (Grupo de Investigación EVALfor, Universidad de Cádiz)
 - **Dirección**: Gregorio Rodríguez Gómez y María Soledad Ibarra Sáiz (Grupo de Investigación EVALfor, Universidad de Cádiz)
+- **Guion**: Miguel Ángel Gómez Ruiz (Grupo de Investigación EVALfor, Universidad de Cádiz)
 - **Ilustración y animación**: David Nieto Rojas ([deividart.com](http://www.deividart.com))
-- **Programación (versión original)**: Juan Antonio Caballero Hernández (Grupo de Investigación EVALfor, Universidad de Cádiz)
-- **Música**: «Brittle Rille», «Rollin at 5» y «Carefree», de Kevin MacLeod
+- **Programación**: Juan Antonio Caballero Hernández (Grupo de Investigación EVALfor, Universidad de Cádiz)
+- **Reconocimientos (música)**: efectos de sonido de [freesound.org](https://freesound.org);
+  «Brittle Rille», «Rollin at 5» y «Carefree», de Kevin MacLeod
   ([incompetech.com](https://incompetech.com)), con licencia
   [Creative Commons Reconocimiento](https://creativecommons.org/licenses/by/4.0/deed.es)
-- **Efectos de sonido**: [freesound.org](https://freesound.org)
-- **Tipografías de la versión web**: Arimo y Quicksand
-  ([SIL Open Font License 1.1](https://openfontlicense.org))
 - Desarrollado con [eAdventure](https://e-adventure.e-ucm.es/) (e-UCM, Universidad Complutense de Madrid)
+- Tipografías de la versión web: Arimo y Quicksand ([SIL Open Font License 1.1](https://openfontlicense.org))
 
 Juego realizado en el marco del Proyecto DevalS (EDU2012-31804), financiado parcialmente
 por el Ministerio de Economía y Competitividad.
 
 ## Licencia
 
-Pendiente de confirmar. La versión original se publicó bajo una licencia
-[Creative Commons Reconocimiento-CompartirIgual 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.es).
+El juego se distribuye bajo la licencia
+[Creative Commons Reconocimiento-CompartirIgual 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.es),
+como figura en sus créditos. El código del motor de la versión web (`jugar/js/`) es una
+adaptación del motor eAdventure y se distribuye bajo GNU LGPL 3.0. Detalles y textos
+completos en [`LICENSE.md`](LICENSE.md).
 
 ## Cómo citar
 
-El DOI de Zenodo se añadirá aquí cuando el juego quede archivado.
+Gómez Ruiz, M. Á., Rodríguez Gómez, G., Ibarra Sáiz, M. S., Caballero Hernández, J. A. y Nieto Rojas, D. (2015). *EVONG. Evaluación en acción* [Juego educativo]. Zenodo. https://doi.org/… *(el DOI se añadirá cuando el juego quede archivado en Zenodo)*
+
+Los datos para citarlo también están en [`CITATION.cff`](CITATION.cff) (botón «Cite this
+repository» de GitHub).
