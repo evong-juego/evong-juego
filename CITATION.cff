@@ -17,6 +17,7 @@ authors:
     affiliation: "Grupo de Investigación EVALfor, Universidad de Cádiz"
   - family-names: "Nieto Rojas"
     given-names: "David"
+doi: "10.5281/zenodo.24529825"
 license: CC-BY-SA-3.0
 url: "https://evong-juego.github.io/evong-juego/"
 repository-code: "https://github.com/evong-juego/evong-juego"
