@@ -45,19 +45,27 @@ juego y usa los mismos datos, imágenes y sonidos que la versión Java.
 
 ## Créditos
 
-- **Autor**: Miguel Ángel Gómez Ruiz (Universidad de Cádiz)
-- **Grupo de Investigación EVALfor**, Universidad de Cádiz
-- *(Créditos completos pendientes de confirmar)*
-- **Música**: «Brittle Rille», «Carefree» y «Rollin at 5 (Acoustic)», de Kevin MacLeod
+Según la pantalla de créditos del propio juego:
+
+- **Guion**: Miguel Ángel Gómez Ruiz (Grupo de Investigación EVALfor, Universidad de Cádiz)
+- **Dirección**: Gregorio Rodríguez Gómez y María Soledad Ibarra Sáiz (Grupo de Investigación EVALfor, Universidad de Cádiz)
+- **Ilustración y animación**: David Nieto Rojas ([deividart.com](http://www.deividart.com))
+- **Programación (versión original)**: Juan Antonio Caballero Hernández (Grupo de Investigación EVALfor, Universidad de Cádiz)
+- **Música**: «Brittle Rille», «Rollin at 5» y «Carefree», de Kevin MacLeod
   ([incompetech.com](https://incompetech.com)), con licencia
-  [Creative Commons Reconocimiento 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)
+  [Creative Commons Reconocimiento](https://creativecommons.org/licenses/by/4.0/deed.es)
+- **Efectos de sonido**: [freesound.org](https://freesound.org)
 - **Tipografías de la versión web**: Arimo y Quicksand
   ([SIL Open Font License 1.1](https://openfontlicense.org))
 - Desarrollado con [eAdventure](https://e-adventure.e-ucm.es/) (e-UCM, Universidad Complutense de Madrid)
 
+Juego realizado en el marco del Proyecto DevalS (EDU2012-31804), financiado parcialmente
+por el Ministerio de Economía y Competitividad.
+
 ## Licencia
 
-Pendiente de confirmar.
+Pendiente de confirmar. La versión original se publicó bajo una licencia
+[Creative Commons Reconocimiento-CompartirIgual 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.es).
 
 ## Cómo citar
 
