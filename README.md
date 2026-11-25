@@ -1,6 +1,6 @@
 # EVONG · Evaluación en acción
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24529825.svg)](https://doi.org/10.5281/zenodo.24529825)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24529824.svg)](https://doi.org/10.5281/zenodo.24529824)
 
 *EVONG. Evaluación en acción* (*EVONG. Assessment in Action*) es un juego de simulación
 con fines educativos en el que el jugador aborda tareas de evaluación. Es una aventura
@@ -85,7 +85,10 @@ completos en [`LICENSE.md`](LICENSE.md).
 
 ## Cómo citar
 
-Gómez Ruiz, M. Á., Rodríguez Gómez, G., Ibarra Sáiz, M. S., Caballero Hernández, J. A. y Nieto Rojas, D. (2015). *EVONG. Evaluación en acción* [Juego educativo]. Zenodo. https://doi.org/10.5281/zenodo.24529825
+Gómez Ruiz, M. Á., Rodríguez-Gómez, G., Ibarra-Sáiz, M. S., Caballero-Hernández, J. A. y Nieto Rojas, D. (2015). *EVONG. Evaluación en acción* [Juego educativo]. Zenodo. https://doi.org/10.5281/zenodo.24529824
+
+Este DOI apunta siempre a la última versión archivada en Zenodo. La versión 1.0 tiene su
+propio DOI: [10.5281/zenodo.24529825](https://doi.org/10.5281/zenodo.24529825).
 
 Los datos para citarlo también están en [`CITATION.cff`](CITATION.cff) (botón «Cite this
 repository» de GitHub).
