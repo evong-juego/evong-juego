@@ -42,7 +42,7 @@
   "notes": "Juego realizado en el marco del Proyecto DevalS (EDU2012-31804), financiado parcialmente por el Ministerio de Economía y Competitividad.",
   "related_identifiers": [
     {
-      "identifier": "https://evong-juego.github.io/evong-juego/",
+      "identifier": "https://evong.evalfor.net/",
       "relation": "isSupplementedBy",
       "resource_type": "software"
     }

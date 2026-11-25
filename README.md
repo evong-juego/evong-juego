@@ -3,19 +3,19 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24529824.svg)](https://doi.org/10.5281/zenodo.24529824)
 
 *EVONG. Evaluación en acción* (*EVONG. Assessment in Action*) es un juego de simulación
-con fines educativos en el que el jugador aborda tareas de evaluación. Es una aventura
+con fines educativos en el que la persona que juega aborda tareas de evaluación. Es una aventura
 gráfica en 2D en primera persona, ambientada en la creación y gestión de una ONG llamada
 «InterAcción», que se juega desde tres perfiles:
 
-- Coordinador de Economía y Calidad
-- Coordinador de Proyectos
-- Coordinador de Relaciones Institucionales
+- Coordinación de Economía y Calidad
+- Coordinación de Proyectos
+- Coordinación de Relaciones Institucionales
 
 Cada perfil es como un pequeño juego, con actividades distintas en la misma ambientación,
 de unos 20 minutos. La variable principal es el «Índice de éxito del área», que refleja
 la correcta consecución de las tareas de evaluación.
 
-Está pensado para estudiantes universitarios de los primeros cursos de cualquier área,
+Está pensado para estudiantado universitario de los primeros cursos de cualquier área,
 y también puede usarse en otros niveles y en contextos no formales e informales.
 Sus objetivos educativos son:
 
@@ -27,8 +27,8 @@ Sus objetivos educativos son:
 ## Jugar
 
 - **En el navegador** (ordenador, tableta o móvil, sin instalar nada):
-  <https://evong.evalfor.net/> *(dirección en preparación)*.
-  Versión en inglés: añade `#en` al final de la dirección.
+  <https://evong.evalfor.net/> (página del juego) · <https://evong.evalfor.net/jugar/> (directamente al juego).
+  En inglés: <https://evong.evalfor.net/en/> y <https://evong.evalfor.net/jugar/#en>.
 - **Versión original para Java**: [`java/evong-es.jar`](java/evong-es.jar) (español) y
   [`java/evong-en.jar`](java/evong-en.jar) (inglés). Se abren con `java -jar` y
   necesitan Java instalado.
