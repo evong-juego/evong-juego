@@ -1,0 +1,64 @@
+# EVONG · Evaluación en acción
+
+*EVONG. Evaluación en acción* (*EVONG. Assessment in Action*) es un juego de simulación
+con fines educativos en el que el jugador aborda tareas de evaluación. Es una aventura
+gráfica en 2D en primera persona, ambientada en la creación y gestión de una ONG llamada
+«InterAcción», que se juega desde tres perfiles:
+
+- Coordinador de Economía y Calidad
+- Coordinador de Proyectos
+- Coordinador de Relaciones Institucionales
+
+Cada perfil es como un pequeño juego, con actividades distintas en la misma ambientación,
+de unos 20 minutos. La variable principal es el «Índice de éxito del área», que refleja
+la correcta consecución de las tareas de evaluación.
+
+Está pensado para estudiantes universitarios de los primeros cursos de cualquier área,
+y también puede usarse en otros niveles y en contextos no formales e informales.
+Sus objetivos educativos son:
+
+- Aplicar los conocimientos adquiridos sobre evaluación, estableciendo criterios y
+  realizando valoraciones ajustadas al objeto evaluado.
+- Tomar decisiones de forma razonada y consecuente, conociendo las opciones
+  disponibles y las metas, y proponiendo estrategias orientadas a conseguirlas.
+
+## Jugar
+
+- **En el navegador** (ordenador, tableta o móvil, sin instalar nada):
+  <https://evong.evalfor.net/> *(dirección en preparación)*.
+  Versión en inglés: añade `#en` al final de la dirección.
+- **Versión original para Java**: [`java/evong-es.jar`](java/evong-es.jar) (español) y
+  [`java/evong-en.jar`](java/evong-en.jar) (inglés). Se abren con `java -jar` y
+  necesitan Java instalado.
+
+## Contenido del repositorio
+
+| Ruta | Qué es |
+|---|---|
+| `jugar/` | Versión web: el juego original funcionando en el navegador, en español e inglés (detalles técnicos en [`jugar/LEEME.md`](jugar/LEEME.md)) |
+| `java/evong-es.jar` | Versión original para Java en español (distribuida como `evong-09.jar`, 2015) |
+| `java/evong-en.jar` | Versión original para Java en inglés (distribuida como `evon_eng.jar`, 2015) |
+| `index.html` | Página de entrada (provisionalmente, lleva directamente al juego) |
+
+La versión web reimplementa en JavaScript el motor eAdventure con el que se hizo el
+juego y usa los mismos datos, imágenes y sonidos que la versión Java.
+
+## Créditos
+
+- **Autor**: Miguel Ángel Gómez Ruiz (Universidad de Cádiz)
+- **Grupo de Investigación EVALfor**, Universidad de Cádiz
+- *(Créditos completos pendientes de confirmar)*
+- **Música**: «Brittle Rille», «Carefree» y «Rollin at 5 (Acoustic)», de Kevin MacLeod
+  ([incompetech.com](https://incompetech.com)), con licencia
+  [Creative Commons Reconocimiento 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)
+- **Tipografías de la versión web**: Arimo y Quicksand
+  ([SIL Open Font License 1.1](https://openfontlicense.org))
+- Desarrollado con [eAdventure](https://e-adventure.e-ucm.es/) (e-UCM, Universidad Complutense de Madrid)
+
+## Licencia
+
+Pendiente de confirmar.
+
+## Cómo citar
+
+El DOI de Zenodo se añadirá aquí cuando el juego quede archivado.

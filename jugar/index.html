@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVONG · Evaluación en acción</title>
+<link rel="icon" href="icon.png">
+<meta name="description" content="EVONG: juego educativo sobre evaluación en una ONG. Versión para navegador.">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #101114; color: #e9e6df;
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  #frame { position: relative; width: min(100vw, calc(100vh * 4 / 3)); aspect-ratio: 4 / 3; background: #000;
+    box-shadow: 0 0 0 1px #2a2c31, 0 20px 60px rgba(0,0,0,.5); }
+  #game { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+  .ov { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 5; }
+  #start { pointer-events: none; }
+  #start button { pointer-events: auto; position: absolute; left: 50%; top: 54%; transform: translate(-50%, -50%);
+    font-size: clamp(16px, 2.6vw, 22px); padding: .8em 2.4em; }
+  #touchHint { position: absolute; left: 50%; top: 37%; transform: translate(-50%, -50%); margin: 0; max-width: 80%; text-align: center;
+    font: 500 clamp(12px, 2vw, 16px)/1.35 system-ui, sans-serif; color: #fff; background: rgba(0,0,0,.6); border-radius: 10px; padding: .5em .9em; }
+  .btn { font: 600 18px/1 system-ui, sans-serif; color: #fff; background: #1d6fae; border: 0; border-radius: 999px;
+    padding: 14px 34px; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+  .btn:hover { background: #2581c7; }
+  .btn:focus-visible { outline: 3px solid #9ccbf0; outline-offset: 3px; }
+  .hidden { display: none !important; }
+  #toolbar { position: fixed; top: 8px; right: 8px; display: flex; gap: 6px; z-index: 10; opacity: .35; transition: opacity .2s; }
+  #toolbar:hover, #toolbar:focus-within { opacity: 1; }
+  #toolbar button, #toolbar a { display: grid; place-items: center; min-width: 34px; height: 34px; padding: 0 8px; color: #e9e6df;
+    background: rgba(30,32,36,.85); border: 1px solid #3a3d44; border-radius: 8px; cursor: pointer; text-decoration: none; font: 600 12px/1 system-ui, sans-serif; }
+  #toolbar svg { width: 18px; height: 18px; }
+  .panel { background: #f7f5f0; color: #1d1f23; border-radius: 10px; width: min(520px, 90%); padding: 22px 24px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+  .panel h2 { margin: 0 0 10px; font-size: 19px; }
+  .panel p { margin: 0 0 16px; }
+  .panel .actions { display: flex; gap: 10px; justify-content: flex-end; }
+  .modal { background: rgba(0,0,0,.55); }
+  #end { align-items: flex-end; padding-bottom: 4%; background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 45%); }
+  #end .panel { width: min(460px, 86%); padding: 16px 20px; }
+  #end .panel h2 { font-size: 17px; margin-bottom: 4px; }
+  #end .panel p { margin-bottom: 12px; }
+  #error { color: #fff; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+<div id="frame">
+  <canvas id="game" width="800" height="600" aria-label="EVONG"></canvas>
+  <div id="start" class="ov hidden"><button class="btn" id="startBtn" type="button">Jugar</button><p id="touchHint" class="hidden"></p></div>
+  <div id="end" class="ov modal hidden" role="dialog" aria-modal="true" aria-labelledby="endTitle">
+    <div class="panel">
+      <h2 id="endTitle">Fin del juego</h2>
+      <p id="endText">Gracias por jugar a EVONG.</p>
+      <div class="actions"><button class="btn" id="again" type="button">Volver a empezar</button></div>
+    </div>
+  </div>
+  <noscript><div class="ov">Este juego necesita JavaScript.</div></noscript>
+</div>
+<div id="toolbar">
+  <button id="menuBtn" type="button" title="Menú del juego (Esc)" aria-label="Menú del juego (Esc)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+  <a id="langLink" href="#en" hreflang="en" title="English version">EN</a>
+  <button id="fs" type="button" title="Pantalla completa" aria-label="Pantalla completa">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+  </button>
+</div>
+<script src="js/e1-fonts.js"></script>
+<script src="js/e1-data.js"></script>
+<script src="js/e1-media.js"></script>
+<script src="js/e1-engine.js"></script>
+<script src="js/e1-gui.js"></script>
+<script src="js/e1-game.js"></script>
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const params = new URLSearchParams(location.search);
+  const hashLang = location.hash === '#en' ? 'en' : location.hash === '#es' ? 'es' : null;
+  const lang = (hashLang || params.get('lang') || document.documentElement.dataset.lang || 'es') === 'en' ? 'en' : 'es';
+  window.addEventListener('hashchange', () => { if (location.hash === '#en' || location.hash === '#es') location.reload(); });
+  const T = lang === 'en'
+    ? { play: 'Play', end: 'Game over', thanks: 'Thanks for playing EVONG.', again: 'Play again', fs: 'Full screen', fsx: 'Exit full screen', err: 'The game could not be loaded.', other: 'ES', otherTitle: 'Versión en español', touch: 'Touch screen: tap an object to see what you can do with it.', menu: 'Game menu (Esc)' }
+    : { play: 'Jugar', end: 'Fin del juego', thanks: 'Gracias por jugar a EVONG.', again: 'Volver a empezar', fs: 'Pantalla completa', fsx: 'Salir de pantalla completa', err: 'No se ha podido cargar el juego.', other: 'EN', otherTitle: 'English version', touch: 'Pantalla táctil: toca un objeto para ver qué puedes hacer con él.', menu: 'Menú del juego (Esc)' };
+  document.documentElement.lang = lang;
+  $('startBtn').textContent = T.play; $('endTitle').textContent = T.end; $('endText').textContent = T.thanks; $('again').textContent = T.again;
+  $('fs').title = T.fs; $('fs').setAttribute('aria-label', T.fs);
+  $('langLink').textContent = T.other; $('langLink').title = T.otherTitle; $('langLink').href = lang === 'en' ? '#es' : '#en';
+  $('langLink').hreflang = lang === 'en' ? 'es' : 'en';
+  $('touchHint').textContent = T.touch;
+  $('menuBtn').title = T.menu; $('menuBtn').setAttribute('aria-label', T.menu);
+  // the options menu (save, load, sound) is opened with Esc; this button does the same on touch screens
+  $('menuBtn').onclick = () => { if (game.running && !game.ended) game.pushInput({ type: 'key', keyCode: 27 }); $('menuBtn').blur(); };
+  if (window.matchMedia && matchMedia('(pointer: coarse)').matches) $('touchHint').classList.remove('hidden');
+
+  const canvas = $('game');
+  const game = new E1.Game({
+    canvas, base: '', lang,
+    ui: { onEnd() { $('end').classList.remove('hidden'); $('again').focus(); } },
+  });
+  window.game = game;
+
+  // ------------------------------------------------------------ input (Java AWT-like mouse events)
+  const pos = (ev) => {
+    const r = canvas.getBoundingClientRect();
+    return { x: Math.floor((ev.clientX - r.left) * 800 / r.width), y: Math.floor((ev.clientY - r.top) * 600 / r.height) };
+  };
+  let down = null, lastClick = null;
+  canvas.addEventListener('contextmenu', (ev) => ev.preventDefault());
+  canvas.addEventListener('pointerdown', (ev) => {
+    if (!game.running) return;
+    ev.preventDefault();
+    try { canvas.setPointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
+    const p = pos(ev), button = ev.button === 2 ? 3 : ev.button === 1 ? 2 : 1;
+    if (ev.pointerType !== 'mouse') game.pushInput({ type: 'move', x: p.x, y: p.y, button: 0 });
+    down = { x: p.x, y: p.y, button, id: ev.pointerId };
+    game.pushInput({ type: 'down', x: p.x, y: p.y, button });
+  });
+  canvas.addEventListener('pointermove', (ev) => {
+    if (!game.running) return;
+    const p = pos(ev);
+    if (down && down.id === ev.pointerId) game.pushInput({ type: 'drag', x: p.x, y: p.y, button: down.button });
+    else if (ev.pointerType === 'mouse') game.pushInput({ type: 'move', x: p.x, y: p.y, button: 0 });
+  });
+  const up = (ev, cancelled) => {
+    if (!down || down.id !== ev.pointerId) return;
+    const d = down; down = null;
+    let p = pos(ev);
+    // a press that ends where it began (allowing for a finger's wobble) is a click
+    const touch = ev.pointerType !== 'mouse';
+    const slop = (touch ? 14 : 4) * 800 / canvas.getBoundingClientRect().width;
+    const still = Math.abs(p.x - d.x) <= slop && Math.abs(p.y - d.y) <= slop;
+    if (still) p = { x: d.x, y: d.y };
+    game.pushInput({ type: 'up', x: p.x, y: p.y, button: d.button });
+    if (cancelled || !still) return;
+    const now = performance.now();
+    let clickCount = 1;
+    if (lastClick && now - lastClick.t < 500 && Math.abs(lastClick.x - d.x) < 5 && Math.abs(lastClick.y - d.y) < 5 && lastClick.button === d.button) clickCount = 2;
+    lastClick = clickCount === 2 ? null : { t: now, x: d.x, y: d.y, button: d.button };
+    game.pushInput({ type: 'click', x: d.x, y: d.y, button: d.button, clickCount, touch });
+  };
+  canvas.addEventListener('pointerup', (ev) => up(ev, false));
+  canvas.addEventListener('pointercancel', (ev) => up(ev, true));
+  window.addEventListener('keydown', (ev) => {
+    if (!game.running || ev.target !== document.body && ev.target !== canvas) return;
+    const k = E1.keyCode(ev);
+    if (!k) return;
+    if ([27, 37, 38, 39, 40, 34, 32].includes(k)) ev.preventDefault();
+    game.pushInput({ type: 'key', keyCode: k });
+  });
+
+  $('again').onclick = () => { $('end').classList.add('hidden'); game.ended = false; game.restart(); };
+  $('fs').onclick = () => {
+    const el = document.documentElement;
+    if (!document.fullscreenElement) (el.requestFullscreen || el.webkitRequestFullscreen || (() => {})).call(el);
+    else (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+  };
+  document.addEventListener('fullscreenchange', () => {
+    const t = document.fullscreenElement ? T.fsx : T.fs;
+    $('fs').title = t; $('fs').setAttribute('aria-label', t);
+  });
+  document.addEventListener('visibilitychange', () => game.setHidden(document.hidden));
+  $('startBtn').onclick = () => { $('start').classList.add('hidden'); canvas.focus && canvas.focus(); game.begin(); };
+  game.boot().then(() => {
+    $('start').classList.remove('hidden');
+    $('startBtn').focus();
+    if (params.has('autostart')) $('startBtn').click();
+  }).catch((e) => {
+    console.error(e);
+    $('frame').insertAdjacentHTML('beforeend', '<div class="ov" id="error"></div>');
+    $('error').textContent = T.err;
+  });
+})();
+</script>
+</body>
+</html>
